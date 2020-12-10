@@ -1,43 +1,42 @@
-//How to make a meme server courtesy of RhymBil
 var express = require("express"); 
 var app = express();
 var server = require("http").createServer(app);
 var io = require("socket.io")(server);
 
-//setting the required variables
+//Conexão de varios Usuarios, para salas abertas
 
-usuarios = []; //users array
-usersConnections = []; //connections array
+// usuarios = []; //array para Usuarios
+// usersConnections = []; //array para usuarios conectados
 
 
-server.listen(process.env.PORT || 8080);  // It will run on localhost:(any number)
+server.listen(process.env.PORT || 8080); //Portas de conexão/trasporte de dados
 console.log("Servidor executando...");
 
 app.get("/", function(req, res){
-	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
+	res.sendFile(__dirname + "/index.html"); //Chamada dos arquivo html
 	
 });
 
 
 
 io.sockets.on("connection", function(socket){
-	//connection stuff
-	usersConnections.push(socket);
-	console.log("usuarios connected: %s", usersConnections.length);
+	//connection
+	// usersConnections.push(socket);
+	// console.log("usuarios connected: %s", usersConnections.length);
 	
-	// disconnection stuff
-	socket.on("disconnect", function(data){
+	// // disconnection 
+	// socket.on("disconnect", function(data){
 		
-		usuarios.splice(usuarios.indexOf(socket.username), 1); //accessing the array usuarios
+	// 	usuarios.splice(usuarios.indexOf(socket.username), 1); //accessing the array usuarios
 		
 		
-	usersConnections.splice(usersConnections.indexOf(socket),1);
-	console.log("usuarios disconnected: Carlos ");
-	});
+	// usersConnections.splice(usersConnections.indexOf(socket),1);
+	// console.log("usuarios disconnected:");
+	// });
 	
-	//send dem proEagle messages
+	//Envio de mensagens ProEagle
 	socket.on("enviar nova message", function(data){ 
-		console.log(data);// shows what the usuarios typed in console
+		// console.log(data);  mensagens digitadas pelo cliente - no console
 		io.sockets.emit("new message", {msg: data});
 	});
 });
