@@ -27,7 +27,7 @@ io.sockets.on("connection", function(socket){
 	// // disconnection 
 	// socket.on("disconnect", function(data){
 		
-	// 	usuarios.splice(usuarios.indexOf(socket.username), 1); //accessing the array usuarios
+	// 	usuarios.splice(usuarios.indexOf(socket.username), 1); //acessando usuarios do array
 		
 		
 	// usersConnections.splice(usersConnections.indexOf(socket),1);

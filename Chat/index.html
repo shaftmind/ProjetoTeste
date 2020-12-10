@@ -1005,9 +1005,7 @@
             </div>
             <button class="btnTrocar" onclick="trocar()">Trocar</button>
             <div class="chat" value="1" id="chat">
-                <!-- <select multiple="multiple" id='lista_usuarios'>
-                <option value=''>Pessoas Conectadas</option>
-            </select> -->
+          
 
 
                 <div id="messageBox"></div>
@@ -1018,6 +1016,9 @@
                 <button type="submit" id="btn_enviar" class="bnt" onclick="enviarMensagem()"> Enviar </button>
                 <button type="submit" id="btn_historico" class="bnt" onclick="histor()"> Histórico </button>
             </form>
+
+            <!-- Div que mostraria usuarios conectados -->
+
             <!-- <div id="conectados">
         <select multiple="multiple" id='lista_usuarios'>
             <option value=''>Pessoas Conectadas</option>
@@ -1067,10 +1068,10 @@
 <script>
 
     $(function () {
-        var socket = io.connect();  //connects to socket
-        var $messageForm = $("#envioDeMsg"); //ref to the div message form
-        var $messageInput = $("#messageInput"); //ref to input box with id message
-        var $chat = $("#chat"); //ref to div chat
+        var socket = io.connect();  //conexão com o socket
+        var $messageForm = $("#envioDeMsg"); //referencia de formulario para envio de mensagem
+        var $messageInput = $("#messageInput"); //referencia ao input da mensagem
+        var $chat = $("#chat"); //referencia a div do chat
         var test = $messageInput.val("");
 
         $messageForm.submit(function (e) {
@@ -1129,6 +1130,9 @@
         chat.scrollTop = chat.scrollHeight;
         showlog = false;
     }
+
+
+    //  Bloco para conexão aberta... / & vizualização de usuarios conectados
 
 // socket.on("atualizar usuarios", function (usuarios) {
 //             $("#lista_usuarios").empty();
