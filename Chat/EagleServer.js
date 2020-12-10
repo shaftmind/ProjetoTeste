@@ -8,7 +8,7 @@ var io = require("socket.io").listen(server);
 usuarios = []; //users array
 usersConnections = []; //connections array
 
-server.listen(process.env.PORT || 8080);  // It will run on localhost:(any number)
+server.listen(proeagleg.azurewebsites.net);  // It will run on localhost:(any number)
 console.log("Servidor executando...");
 
 app.get("/chati", function(req, res){
