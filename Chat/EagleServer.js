@@ -1,14 +1,9 @@
 //How to make a meme server courtesy of RhymBil
 var express = require("express"); 
 var app = express();
-var app2 = express();
-var app3 = express();
 var server = require("http").createServer(app);
-var server2 = require("http").createServer(app2);
-var server3 = require("http").createServer(app3);
 var io = require("socket.io")(server);
-var io = require("socket.io")(server2);
-var io = require("socket.io")(server3);
+
 //setting the required variables
 
 usuarios = []; //users array
@@ -22,16 +17,8 @@ app.get("/", function(req, res){
 	
 });
 
-app2.get("/cliente", function(req, res){
-	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
-	
-});
 
-app3.get("/amamosgisele", function(req, res){
-	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
-	
-});
-	
+
 io.sockets.on("connection", function(socket){
 	//connection stuff
 	usersConnections.push(socket);
