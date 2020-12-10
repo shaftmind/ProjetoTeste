@@ -8,10 +8,10 @@ var io = require("socket.io").listen(server);
 usuarios = []; //users array
 usersConnections = []; //connections array
 
-server.listen(proeagleg.azurewebsites.net);  // It will run on localhost:(any number)
+server.listen(process.env.PORT || 8080);  // It will run on localhost:(any number)
 console.log("Servidor executando...");
 
-app.get("/chati", function(req, res){
+app.get("/", function(req, res){
 	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
 	
 });

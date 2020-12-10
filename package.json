@@ -6,7 +6,7 @@
   },
   "main": "Chat/EagleServer.js",
   "scripts": {
-    "start": "Chat/EagleServer.js"
+    "start": "node Chat/EagleServer.js"
   },
   "repository": {
     "type": "git",
