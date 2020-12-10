@@ -4,9 +4,11 @@ var app = express();
 var app2 = express();
 var app3 = express();
 var server = require("http").createServer(app);
-var server = require("http").createServer(app2);
-var server = require("http").createServer(app3);
+var server2 = require("http").createServer(app2);
+var server3 = require("http").createServer(app3);
 var io = require("socket.io")(server);
+var io = require("socket.io")(server2);
+var io = require("socket.io")(server3);
 //setting the required variables
 
 usuarios = []; //users array
