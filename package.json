@@ -4,9 +4,9 @@
   "engines": {
     "node": "12"
   },
-  "main": "server/src/index.js",
+  "main": "Chat/EagleServer.js",
   "scripts": {
-    "start": "node server/src/index.js"
+    "start": "Chat/EagleServer.js"
   },
   "repository": {
     "type": "git",

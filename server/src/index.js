@@ -12,3 +12,15 @@ app.get("/api", (_, res) =>
 );
 
 app.listen(process.env.PORT || 3333, () => console.log(msg));
+
+
+
+// var express = require('express');
+// var router = express.Router();
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+
+// module.exports = router;
