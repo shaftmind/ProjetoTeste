@@ -11,7 +11,7 @@ usersConnections = []; //connections array
 server.listen(process.env.PORT || 8080);  // It will run on localhost:(any number)
 console.log("Servidor executando...");
 
-app.get("/", function(req, res){
+app.get("/suamae", function(req, res){
 	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
 	
 });
